@@ -1,0 +1,29 @@
+{
+  "name": "chatting",
+  "version": "1.0.0",
+  "private": true,
+  "description": "chatting program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "iconv": "^3.0.0",
+    "iconv-lite": "^0.6.2",
+    "jquery": "^3.5.1",
+    "node-cron": "^2.0.3",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jiyeol90/rockyoumuch.git"
+  }
+}

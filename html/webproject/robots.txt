@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /crawling/
+Sitemap: https://www.rockyoumuch.tk/sitemap.xml
