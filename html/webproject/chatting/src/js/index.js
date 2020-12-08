@@ -57,22 +57,25 @@ function drawChatMessage(data) {
 var sendButton = document.getElementById('chatMessageSendBtn'); //사용자가 채팅 텍스트를 작성 후 전송할 버튼
 var chatInput = document.getElementById('chatInput'); //사용자가 채팅 텍스트를 작성할 input
 
-// sendButton.addEventListener('click', function() {
-//     var message = chatInput.value;
-//     if (!message) return false;
-//     socket.emit('sendMessage', {
-//         message
-//     });
-//     chatInput.value = '';
-// });
 
-sendButton.addEventListener('keypress', function(e) {
-    if(e.key === 'Enter') {
+//채팅 메시지를 보내는 두가지 방법
+//1. 전송 버튼을 클릭한다.
+sendButton.addEventListener('click', function() {
     var message = chatInput.value;
     if (!message) return false;
     socket.emit('sendMessage', {
         message
     });
     chatInput.value = '';
-    }
+});
+//2. 엔터키를 누른다. 
+window.addEventListener('keydown', function(e) {
+    if(e.key === 'Enter' ) {
+        var message = chatInput.value;
+    if (!message)  return false;
+    socket.emit('sendMessage', {
+        message
+    });
+    chatInput.value = '';
+    } 
 });
