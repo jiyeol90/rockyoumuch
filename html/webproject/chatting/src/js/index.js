@@ -57,11 +57,22 @@ function drawChatMessage(data) {
 var sendButton = document.getElementById('chatMessageSendBtn'); //사용자가 채팅 텍스트를 작성 후 전송할 버튼
 var chatInput = document.getElementById('chatInput'); //사용자가 채팅 텍스트를 작성할 input
 
-sendButton.addEventListener('click', function() {
+// sendButton.addEventListener('click', function() {
+//     var message = chatInput.value;
+//     if (!message) return false;
+//     socket.emit('sendMessage', {
+//         message
+//     });
+//     chatInput.value = '';
+// });
+
+sendButton.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter') {
     var message = chatInput.value;
     if (!message) return false;
     socket.emit('sendMessage', {
         message
     });
     chatInput.value = '';
+    }
 });
